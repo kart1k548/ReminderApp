@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/reminder.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main>
+                <% if (reds.length > 0) { %>
+                    <div class="grid">
+                        <% for (let reminder of reds) { %>
+                            <article class="card reminder-item">
+                                <header class="card__header">
+                                    <h1 class="reminder__name">
+                                        <%= reminder.name %>
+                                    </h1>
+                                </header>
+                                <p class="reminder__description">
+                                    <%= reminder.description %>
+                                </p>
+                                <div class="card__content">
+                                    <h3 class="reminder__date_time">
+                                        <%= reminder.date_time %>
+                                    </h3>
+                                </div>
+                                <div class="card__content">
+                                    <h3 class="reminder__date_time">
+                                        <%= reminder.email %>
+                                    </h3>
+                                </div>
+                                <div class="card__actions">
+                                    <a href="/edit-reminder/<%= reminder._id %>?edit=true" class="btn">Edit</a>
+                                    <form action="/delete-reminder" method="POST">
+                                        <input type="hidden" value="<%= reminder._id %>" name="reminderId">
+                                        <button class="btn" type="submit">Delete</button>
+                                    </form>
+
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+                    <% } else { %>
+                        <h1>No Reminders Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

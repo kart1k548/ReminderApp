@@ -1,0 +1,36 @@
+body{
+    background-image:url(../43.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+.reminder-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+    background: white;
+    padding: 40px;
+}
+
+.reminder-item {
+    background: white;
+    padding: 40px;
+    width: 20rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.reminder__name{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.reminder__date_time {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.reminder__description {
+    text-align: center;
+}

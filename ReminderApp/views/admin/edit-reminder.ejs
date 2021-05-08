@@ -1,0 +1,34 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/reminder.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <form class="reminder-form" action="/<% if (editing) { %>edit-reminder<% } else { %>add-reminder<% } %>" method="POST">
+            <div class="form-control">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="<% if (editing) { %><%= reminder.name %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" value="<% if (editing) { %><%= reminder.description %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="date_time">Date & Time</label>
+                <input type="datetime-local" name="date_time" id="date_time" step="0.01" value="<% if (editing) { %><%= reminder.date_time %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" step="0.01" value="<% if (editing) { %><%= reminder.email %><% } %>">
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= reminder._id %>" name="reminderId">
+            <% } %>
+
+            <button class="btn" type="submit"><% if (editing) { %>Update Reminder<% } else { %>Add Reminder<% } %></button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
