@@ -10,10 +10,10 @@ Step 3: Type command "npm start" in order to start the server.
 Step 4: Open your web browser and navigate to this link: "http://127.0.0.1:5006"
 
 Add Reminder Page:
-![](images/Home1.png)
+![](Images/AddReminder.png)
 
 List of all Reminders Page:
-![](images/Feeds.png)
+![](Images/AllReminders.png)
 
 Edit Reminder Page:
-![](images/Feeds.png)
+![](Images/EditReminder.png)
